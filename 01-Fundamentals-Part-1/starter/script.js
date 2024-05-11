@@ -83,3 +83,30 @@ if (money){
 }else{
     console.log("you should get a job");
 }
+
+
+const hasDriversLiscense = true;
+const hasGoodVision = true;
+const isTired = true;
+
+if (hasDriversLiscense && hasGoodVision || !isTired){
+    console.log("Sarah is fit to Drive");
+}else{
+    console.log("Someone else should drive");
+}
+
+
+const day = "Wednesday";
+
+switch(day){
+    case "Monday": console.log("Go to office day 1");
+        break;  
+    case "Tuesday": console.log("Go to office day 2");
+        break;
+    case "Tuesday": console.log("Go to office day 2");
+        break;
+
+
+    default:
+        console.log("I am homee")
+}
