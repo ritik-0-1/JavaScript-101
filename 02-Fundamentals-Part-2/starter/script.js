@@ -25,3 +25,5 @@ function fruitProcessor (apples, oranges){
 }
 
 console.log(fruitProcessor(5,6)); 
+
+console.log(Number('23'));
