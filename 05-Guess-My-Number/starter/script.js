@@ -14,12 +14,12 @@ console.log(document.querySelector('.again').textContent);
 document.querySelector('.check').addEventListener('click', function () {
   // document.querySelector('.again').textContent = 'Try Again !!!';
   const guess = Number(document.querySelector('.guess').value);
-
   console.log(typeof guess, guess);
-
   if (!guess) {
     // alert('Please enter a valid value');
     document.querySelector('.message').textContent = 'Please enter a non zero no.';
   }
-
 });
+
+
+
