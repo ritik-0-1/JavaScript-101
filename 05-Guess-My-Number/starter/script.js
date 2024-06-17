@@ -1,7 +1,11 @@
 'use strict';
 
 // console.log(document.querySelector('.message').textContent);
-document.querySelector('.message').textContent = '🎆 Start guessing...';
+
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message;
+};
+displayMessage('🎆 Start guessing...');
 
 // document.querySelector('.number').textContent = 13;
 // document.querySelector('.score').textContent = 10;
@@ -25,11 +29,10 @@ document.querySelector('.check').addEventListener('click', function () {
   //condition for edge case
   if (!guess) {
     // alert('Please enter a valid value');
-    document.querySelector('.message').textContent =
-      'Please enter a non zero no.';
+    displayMessage('Please enter a non zero no.');
   } else if (guess === secretNumber) {
     //condition when the value is correct - when this happens we want to change the CSS too with DOM
-    document.querySelector('.message').textContent = 'Correct Number!!!!';
+    displayMessage('Correct Number!!!!');
     document.querySelector('body').style.backgroundColor = '#60b347';
     //increasing the width of the result
     document.querySelector('.number').style.width = '30rem';
@@ -68,12 +71,11 @@ document.querySelector('.check').addEventListener('click', function () {
   //METHOD3: FURTHER OPTIMIZED BASED ON GAME LOGIC - WIN | lOOSE | CANCEL ->
   else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent =
-        guess > secretNumber ? 'Too high' : 'Too low'; //Ternary operator returns a value that gets stored in textContent
+      displayMessage(guess > secretNumber ? 'Too high' : 'Too low'); //Ternary operator returns a value that gets stored in textContent
       score--;
       document.querySelector('.score').textContent = score;
-    }else{
-      document.querySelector('.message').textContent = 'U lost the game!!:(';
+    } else {
+      displayMessage('U lost the game!!:(');
       document.querySelector('.score').textContent = 0;
     }
   }
@@ -85,7 +87,7 @@ document.querySelector('.again').addEventListener('click', function () {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   console.log(secretNumber);
-  document.querySelector('.message').textContent = 'Start guessing...';
+  displayMessage('Start guessing...');
   // displayMessage('Start guessing...');
   document.querySelector('.score').textContent = score;
   document.querySelector('.number').textContent = '?';
