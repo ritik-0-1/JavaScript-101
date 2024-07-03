@@ -11,8 +11,11 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
-  openingHours: {
+  /*In JavaScript, this is a common way to define complex data 
+  structures, where each property of an object can be of any type, 
+  including another object. This allows for a lot of flexibility 
+  and readability in your code. - HENCE THIS IS A PART OF SYNTAX*/ 
+  openingHours:{
     thu: {
       open: 12,
       close: 22,
@@ -25,5 +28,10 @@ const restaurant = {
       open: 0, // Open 24 hours
       close: 24,
     },
-  },
+  },//That's how you give a object under object.
 };
+
+//object destructuring
+
+const { name: nameZ, openingHours, categories } = restaurant;
+console.log(nameZ, openingHours, categories);
